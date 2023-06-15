@@ -5,7 +5,7 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<form method="get" action="/dictionary">
+<form method="post" action="/dictionary">
     <div>
         <label>Nhập từ tiếng anh</label>
         <input name="text" type="text">

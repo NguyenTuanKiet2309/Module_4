@@ -7,14 +7,10 @@
 <body>
 
 <br/>
-<form method="get" action="/calculator">
+<form method="post" action="/calculator">
     <div>
         <label>Nhập USD</label>
-        <input name="usd">
-    </div>
-    <div>
-        <label>Nhập tỉ giá</label>
-        <input name="rate">
+        <input name="money">
     </div>
     <button type="submit">Change</button>
 </form>
