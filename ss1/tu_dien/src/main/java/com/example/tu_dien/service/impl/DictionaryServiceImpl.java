@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Locale;
 import java.util.Map;
+
 @Service
 public class DictionaryService implements IDictionaryService {
     @Autowired
@@ -15,7 +16,7 @@ public class DictionaryService implements IDictionaryService {
     @Override
     public String getDictionary(String text) {
         String result = null;
-        Map<String,String> stringMap = dictionaryRepository.getDictionary();
+        Map<String, String> stringMap = dictionaryRepository.getDictionary();
         for (String m : stringMap.keySet()) {
             if (text.toLowerCase(Locale.ROOT).equals(m)) {
                 result = stringMap.get(m);
@@ -27,6 +28,6 @@ public class DictionaryService implements IDictionaryService {
         if (text.equals("")) {
             result = "Mời bạn nhập từ";
         }
-        return  result;
+        return result;
     }
 }
