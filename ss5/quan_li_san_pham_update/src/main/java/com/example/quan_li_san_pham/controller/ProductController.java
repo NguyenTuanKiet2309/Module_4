@@ -23,9 +23,15 @@ public class ProductController {
     }
 
     @GetMapping("{id}")
-    public String getDetailsProduct(@PathVariable Integer id, Model model) {
-        model.addAttribute("products", this.iProductService.findById(id));
-        return "/details";
+    public String getDetailsProduct(@PathVariable Integer id, Model model, RedirectAttributes redirectAttributes) {
+        Product product = iProductService.findById(id);
+        if (product == null) {
+            redirectAttributes.addFlashAttribute("message", "Not Found");
+            return "redirect:/products";
+        } else {
+            model.addAttribute("products", product);
+            return "/details";
+        }
     }
 
     @GetMapping("/create-form")
@@ -42,10 +48,16 @@ public class ProductController {
     }
 
     @GetMapping("delete/{id}")
-    public String delete(@PathVariable int id, RedirectAttributes redirectAttributes) {
-        iProductService.delete(id);
-        redirectAttributes.addFlashAttribute("message", "Delete Success");
-        return "redirect:/products";
+    public String delete(@PathVariable int id, RedirectAttributes redirectAttributes, Model model) {
+        Product product = iProductService.findById(id);
+        if (product == null) {
+            redirectAttributes.addFlashAttribute("message", "Not Found");
+            return "redirect:/products";
+        } else {
+            iProductService.delete(id);
+            redirectAttributes.addFlashAttribute("message", "Delete Success");
+            return "redirect:/products";
+        }
     }
 
     @GetMapping("edit/{id}")
@@ -53,7 +65,7 @@ public class ProductController {
         Product product = iProductService.findById(id);
         if (product == null) {
             redirectAttributes.addFlashAttribute("message", "Not Found");
-            return "redirect:/";
+            return "redirect:/products";
         } else {
             model.addAttribute("product", product);
             return "/edit";

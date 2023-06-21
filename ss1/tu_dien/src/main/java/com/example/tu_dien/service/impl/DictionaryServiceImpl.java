@@ -1,6 +1,6 @@
 package com.example.tu_dien.service.impl;
 
-import com.example.tu_dien.repository.impl.DictionaryRepository;
+import com.example.tu_dien.repository.impl.DictionaryRepositoryImpl;
 import com.example.tu_dien.service.IDictionaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,9 +9,9 @@ import java.util.Locale;
 import java.util.Map;
 
 @Service
-public class DictionaryService implements IDictionaryService {
+public class DictionaryServiceImpl implements IDictionaryService {
     @Autowired
-    private DictionaryRepository dictionaryRepository;
+    private DictionaryRepositoryImpl dictionaryRepository;
 
     @Override
     public String getDictionary(String text) {

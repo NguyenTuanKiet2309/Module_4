@@ -38,7 +38,12 @@ public class ProductRepository implements IProductRepository {
     public Product findById(int id) {
         TypedQuery<Product> productTypedQuery = ConnectionUltis.entityManager().createQuery(SELECT_BY_ID, Product.class);
         productTypedQuery.setParameter("id", id);
-        return productTypedQuery.getSingleResult();
+        for (Product p : productTypedQuery.getResultList()) {
+            if (p.getId() == id) {
+                return p;
+            }
+        }
+        return null;
     }
 
     @Override

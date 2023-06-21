@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Repository
-public class DictionaryRepository implements IDictionaryRepository {
+public class DictionaryRepositoryImpl implements IDictionaryRepository {
     private static Map<String, String> stringMap = new LinkedHashMap<>();
 
     static {

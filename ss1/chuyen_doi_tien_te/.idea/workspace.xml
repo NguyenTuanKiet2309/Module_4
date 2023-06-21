@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="538460a0-6e8a-4396-8595-e74ec8a57e2b" name="Changes" comment="" />
+    <list default="true" id="538460a0-6e8a-4396-8595-e74ec8a57e2b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/chuyen_doi_tien_te/controller/CalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/chuyen_doi_tien_te/controller/CalculatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/chuyen_doi_tien_te/service/impl/CalculatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/chuyen_doi_tien_te/service/impl/CalculatorServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tu_dien/src/main/java/com/example/tu_dien/controller/DictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tu_dien/src/main/java/com/example/tu_dien/controller/DictionaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tu_dien/src/main/java/com/example/tu_dien/repository/impl/DictionaryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tu_dien/src/main/java/com/example/tu_dien/repository/impl/DictionaryRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tu_dien/src/main/java/com/example/tu_dien/service/impl/DictionaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tu_dien/src/main/java/com/example/tu_dien/service/impl/DictionaryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tu_dien/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../tu_dien/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,9 +28,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -31,6 +44,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="2RENeoZVOvuIOZ8N1bTwqZteHOC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,7 +53,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../thuc_hanh" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -153,10 +167,24 @@
       <updated>1686811380707</updated>
       <workItem from="1686811382206" duration="2465000" />
       <workItem from="1686814434117" duration="1995000" />
+      <workItem from="1686817751169" duration="2756000" />
+      <workItem from="1686887457844" duration="48000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

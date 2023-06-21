@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Dictionary</title>
 </head>
 <body>
 <form method="post" action="/dictionary">
