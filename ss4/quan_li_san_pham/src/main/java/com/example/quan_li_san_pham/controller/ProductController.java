@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -34,26 +35,35 @@ public class ProductController {
     }
 
     @PostMapping()
-    public String createNewProduct(@ModelAttribute Product product) {
+    public String createNewProduct(@ModelAttribute Product product, RedirectAttributes redirectAttributes) {
         iProductService.createProduct(product);
+        redirectAttributes.addFlashAttribute("message", "Create Success");
         return "redirect:/products";
     }
 
     @GetMapping("delete/{id}")
-    public String deleteProduct(@PathVariable Integer id) {
+    public String deleteProduct(@PathVariable Integer id,RedirectAttributes redirectAttributes) {
         iProductService.delete(id);
+        redirectAttributes.addFlashAttribute("message", "Delete Success");
         return "redirect:/products";
     }
 
     @GetMapping("edit/{id}")
-    public String editFormProduct(@PathVariable Integer id, Model model) {
-        model.addAttribute("product", this.iProductService.findById(id));
-        return "/edit";
+    public String editFormProduct(@PathVariable Integer id, Model model,RedirectAttributes redirectAttributes) {
+        Product product = iProductService.findById(id);
+        if (product == null) {
+            redirectAttributes.addFlashAttribute("message", "Not Found");
+            return "redirect:/";
+        } else {
+            model.addAttribute("product", product);
+            return "/edit";
+        }
     }
 
     @PostMapping("/update")
-    public String update(@ModelAttribute Product product) {
+    public String update(@ModelAttribute Product product,RedirectAttributes redirectAttributes) {
         iProductService.update(product);
+        redirectAttributes.addFlashAttribute("message", "Update Success");
         return "redirect:/products";
     }
 
