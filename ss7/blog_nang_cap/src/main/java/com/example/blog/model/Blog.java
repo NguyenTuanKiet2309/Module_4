@@ -17,7 +17,7 @@ public class Blog {
 
     private String title;
 
-    @Column(columnDefinition = "Longtext")
+    @Column(columnDefinition = "LongText")
     private String content;
 
     @Column(name = "date_writing")
