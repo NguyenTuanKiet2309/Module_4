@@ -10,14 +10,13 @@ public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
+    @Column(length = 1000)
     private String introduce;
-
+    @Column(length = 1000)
     private String image;
-
+    @Column(length = 1000)
     private String title;
-
-    @Column(columnDefinition = "LongText")
+    @Column(length = 1000)
     private String content;
 
     private LocalDateTime dateWriting;

@@ -75,6 +75,7 @@ public class BlogController {
 
     @PostMapping("/update")
     public String update(@ModelAttribute Blog blog, RedirectAttributes redirectAttributes) {
+        blog.setDateWriting(LocalDateTime.now());
         blogService.update(blog);
         redirectAttributes.addFlashAttribute("message", "Update Success");
         return "redirect:/blogs";
