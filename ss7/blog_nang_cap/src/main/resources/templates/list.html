@@ -37,6 +37,7 @@
                                                                      th:href="@{/blogs/category/{id}(id=${category.id})}"
                                                                      th:text="${category.name}"></a></li>
                         <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/category">Quản Lý Chủ Đề</a></li>
                     </ul>
                 </li>
             </ul>
@@ -47,37 +48,7 @@
         </div>
     </div>
 </nav>
-<!--<nav class="navbar bg-body-tertiary">-->
-<!--    <div class="container">-->
-<!--        <a class="navbar-brand" href="#">-->
-<!--            <img src="https://www.toponseek.com/blogs/wp-content/uploads/2019/12/blog-2-1agqwuw-2c4299e-3.jpg"-->
-<!--                 alt="Bootstrap" width="50" height="50">-->
-<!--        </a>-->
-<!--        <a th:href="@{/blogs/create}">-->
-<!--            <button style="text-align: left" type="button" class="btn btn-outline-primary">CREATE BLOG</button>-->
-<!--        </a>-->
-<!--        <div class="dropdown">-->
-<!--            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"-->
-<!--                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                Chọn danh mục-->
-<!--            </button>-->
-<!--            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--                <li th:each="category, blogStat:${categorys}">-->
-<!--                    <a class="dropdown-item" th:href="@{/blogs/category/{id}(id=${category.id})}"-->
-<!--                       th:text="${category.name}" th:value="${category.id}">Category</a>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--        <form th:action="@{/blogs/search}" method="get">-->
-<!--            <div style="text-align: right" class="d-flex justify-content-end">-->
-<!--            <span><input style="width: 200px" class="form-control mx-2" name="title"-->
-<!--                         placeholder="Search Blog By Title"> </span>-->
-<!--                <span><button class="btn btn-outline-primary" type="submit">Search</button></span>-->
-<!--            </div>-->
-<!--        </form>-->
-<!--        <h2 style="text-align: center">BLOG TUẤN KIỆT</h2>-->
-<!--    </div>-->
-<!--</nav>-->
+
 <div class="container mt-4 mt-sm-2">
     <div class="row">
         <div>
