@@ -37,12 +37,16 @@ public class BorrowBookService implements IBorrowBookService {
 
     @Override
     public BorrowBook getBookByCode(Integer code) {
-        return borrowBookRepository.findBorrowBookByBorrowCode(code);
+        return borrowBookRepository.findByBorrowCode(code);
     }
 
     @Override
     public void updateFlagDelete(BorrowBook borrowBook) {
         borrowBook.setFlagDelete(true);
         borrowBookRepository.save(borrowBook);
+    }
+    @Override
+    public void deleteById(int id) {
+        borrowBookRepository.deleteById(id);
     }
 }

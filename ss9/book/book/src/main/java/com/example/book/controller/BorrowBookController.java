@@ -19,23 +19,29 @@ public class BorrowBookController {
     private IBookService bookService;
 
     @PostMapping("")
-    public String borrow(@ModelAttribute Book book, Model model, RedirectAttributes redirectAttributes){
-        if (book==null){
-            model.addAttribute("msg","Book Not Found");
+    public String borrow(@ModelAttribute Book book, Model model, RedirectAttributes redirectAttributes) {
+        if (book == null) {
+            model.addAttribute("msg", "Book Not Found");
         }
         bookService.borrowBook(book);
         borrowBookService.create(book);
-        redirectAttributes.addFlashAttribute("msg","Borrow Book Oke And Your Code:"
+        redirectAttributes.addFlashAttribute("msg", "Borrow Book Oke And Your Code:"
                 + borrowBookService.create(book));
         return "redirect:/book";
     }
 
     @PostMapping("/return")
-    public String returnBook(@RequestParam("code") int code,RedirectAttributes redirectAttributes){
-        BorrowBook borrowBook = borrowBookService.getBookByCode(code);
-        bookService.returnBook(borrowBook.getBook());
-        borrowBookService.updateFlagDelete(borrowBook);
-        redirectAttributes.addFlashAttribute("msg","Return Book Oke");
+    public String returnBook(@RequestParam("code") int code, RedirectAttributes redirectAttributes) {
+        if (borrowBookService.getBookByCode(code) == null) {
+            redirectAttributes.addFlashAttribute("msg", "Not Found Code");
+            return "redirect:/book";
+        } else {
+            BorrowBook borrowBook = borrowBookService.getBookByCode(code);
+            bookService.returnBook(borrowBook.getBook());
+            borrowBookService.updateFlagDelete(borrowBook);
+            borrowBookService.deleteById(borrowBook.getId());
+            redirectAttributes.addFlashAttribute("msg", "Return Book Oke");
+        }
         return "redirect:/book";
     }
 

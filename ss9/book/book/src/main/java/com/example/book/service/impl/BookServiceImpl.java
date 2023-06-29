@@ -20,8 +20,10 @@ public class BookServiceImpl implements IBookService {
 
     @Override
     public void borrowBook(Book book) {
-        book.setQuantity(book.getQuantity() - 1);
-        bookRepository.save(book);
+        if (book != null && book.getQuantity() > 0) {
+            book.setQuantity(book.getQuantity() - 1);
+            bookRepository.save(book);
+        }
     }
 
     @Override

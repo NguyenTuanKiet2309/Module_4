@@ -11,5 +11,6 @@ public interface IBorrowBookRepository extends JpaRepository<BorrowBook, Integer
 
     List<BorrowBook> findBorrowBookByBook(Book book);
 
-    BorrowBook findBorrowBookByBorrowCode(int code);
+
+    BorrowBook findByBorrowCode(int code);
 }

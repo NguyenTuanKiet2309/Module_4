@@ -18,6 +18,9 @@
             <label>Name:</label>
             <input th:field="*{name}" readonly>
         </div>
+        <div>
+            <input th:field="*{quantity}" hidden>
+        </div>
     </div>
     <button type="submit">Borrow</button>
 </form>
