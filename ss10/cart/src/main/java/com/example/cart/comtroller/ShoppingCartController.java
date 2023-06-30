@@ -9,10 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ShoppingCartController {
-    @ModelAttribute("cart")
-    public Cart setupCart() {
-        return new Cart();
-    }
 
     @GetMapping("/shopping-cart")
     public ModelAndView showCart(@SessionAttribute("cart") Cart cart) {
