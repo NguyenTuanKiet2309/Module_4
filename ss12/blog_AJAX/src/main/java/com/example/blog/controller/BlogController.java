@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/blogs")
+@CrossOrigin("*")
 public class BlogController {
     @Autowired
     private IBlogService blogService;
@@ -18,10 +19,10 @@ public class BlogController {
     @GetMapping()
     public ResponseEntity<List<Blog>> getList() {
         List<Blog> blogs = this.blogService.getList();
-        if (blogs.isEmpty()){
-          return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        if (blogs.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
-            return new ResponseEntity<>(blogs,HttpStatus.OK);
+            return new ResponseEntity<>(blogs, HttpStatus.OK);
         }
     }
 
@@ -64,4 +65,24 @@ public class BlogController {
         }
     }
 
+    @GetMapping("/search/{title}")
+    @CrossOrigin("*")
+    public ResponseEntity<List<Blog>> searchBlogs(@PathVariable String title) {
+        List<Blog> blogs = blogService.findAllByTitle(title);
+        if (blogs.size() == 0) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(blogs, HttpStatus.OK);
+        }
+    }
+
+    @GetMapping("/getMoreBlogs/{number}")
+    public ResponseEntity<List<Blog>> getMoreBlogs(@PathVariable int number) {
+        List<Blog> blogs = blogService.getMoreBlog(number);
+        if (blogs.size() == 0) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(blogs, HttpStatus.OK);
+        }
+    }
 }
