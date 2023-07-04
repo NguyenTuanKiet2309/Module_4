@@ -5,6 +5,7 @@ id int auto_increment primary key,
 floor int,
 price double,
 people int,
+bedroom int,
 area double
 );
 create table facility(
@@ -26,6 +27,7 @@ gender bit,
 citizen_id varchar(12),
 phone_number varchar(12),
 date_of_birth date,
+email varchar(50),
 set_delete bit
 );
 create table roles(
@@ -41,6 +43,7 @@ phone_number varchar(12) unique not null,
 date_of_birth date,
 roles int,
 foreign key(roles) references roles(id),
+email varchar(50),
 set_delete bit
 );
 create table users(
@@ -75,3 +78,4 @@ times int,
 primary key (id_contract,times),
 paided bit
 );
+
